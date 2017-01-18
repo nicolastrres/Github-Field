@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   build: path.resolve(__dirname, 'build'),
@@ -12,7 +13,8 @@ const config = {
   output: {
     path: PATHS.build,
     filename: 'bundle.js'
-  }
+  },
+  plugins: [new HtmlWebpackPlugin()]
 };
 
 module.exports = config;
