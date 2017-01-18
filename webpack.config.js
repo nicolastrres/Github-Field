@@ -14,6 +14,15 @@ const config = {
     path: PATHS.build,
     filename: 'bundle.js'
   },
+  module : {
+    loaders : [
+      {
+        test : /\.jsx?/,
+        include : PATHS.source,
+        loader : 'babel'
+      }
+    ]
+  },
   plugins: [new HtmlWebpackPlugin()]
 };
 
