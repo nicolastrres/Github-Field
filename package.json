@@ -12,5 +12,8 @@
     "component"
   ],
   "author": "nicolastrres@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^1.14.0"
+  }
 }
