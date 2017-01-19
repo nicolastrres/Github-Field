@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PATHS = {
   build: path.resolve(__dirname, 'build'),
   source: path.resolve(__dirname, 'src'),
-  entry: path.resolve(__dirname, 'src', 'index.jsx')
+  entry: path.resolve(__dirname, 'src', 'index.jsx'),
+  template: path.resolve(__dirname, 'src', 'index.tmpl.html')
 }
 
 const config = {
@@ -23,7 +24,7 @@ const config = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin()]
+  plugins: [new HtmlWebpackPlugin({template: PATHS.template})]
 };
 
 module.exports = config;
