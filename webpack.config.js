@@ -21,10 +21,27 @@ const config = {
         test : /\.jsx?/,
         include : PATHS.source,
         loader : 'babel'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader'
+      }, 
+      {
+        test: /\.css$/,
+        loader: 'css-loader',
+        query: {
+          modules: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]'
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({template: PATHS.template})]
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  plugins: [
+    new webpack.EnvironmentPlugin(['GITHUB_TOKEN']),
+    new HtmlWebpackPlugin({template: PATHS.template})
+  ]
 };
 
 module.exports = config;

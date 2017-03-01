@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "build:dev": "webpack -d --watch",
-    "test": "mocha --require ./.setup.js --recursive './src/**/*.spec.jsx'"
+    "test": "mocha --require ./.setup.js --require ignore-styles --recursive './src/**/*.spec.js*'"
   },
   "keywords": [
     "react",
@@ -23,16 +23,22 @@
     "html-webpack-plugin": "^2.26.0",
     "material-ui": "^0.16.7",
     "react": "^15.4.2",
+    "react-autosuggest": "^9.0.0",
     "react-dom": "^15.4.2",
     "react-tap-event-plugin": "^2.0.1",
-    "webpack": "^1.14.0"
+    "superagent": "^3.4.1",
+    "webpack": "^1.14.0",
+    "css-loader": "^0.26.1",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-register": "^6.18.0",
     "enzyme": "^2.7.0",
     "expect.js": "^0.3.1",
+    "ignore-styles": "^5.0.1",
     "jsdom": "^9.9.1",
     "mocha": "^3.2.0",
-    "react-addons-test-utils": "^15.4.2"
+    "react-addons-test-utils": "^15.4.2",
+    "sinon": "^1.17.7"
   }
 }
