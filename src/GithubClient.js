@@ -8,6 +8,7 @@ export default class GithubClient {
   findAccounts(userName, callback) {
     request
       .get(`${this.API_URL}/search/users?q=${userName}`)
+      .set('Authorization', `token ${process.env.GITHUB_TOKEN}`)
       .accept('application/json')
       .end((err, data) => {
         if(err)
