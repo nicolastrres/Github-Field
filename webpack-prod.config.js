@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const PATHS = {
-  build: path.resolve(__dirname, 'build'),
+  build: path.resolve(__dirname, 'prod-build'),
   source: path.resolve(__dirname, 'src'),
   entry: path.resolve(__dirname, 'src', 'index.jsx'),
 }
