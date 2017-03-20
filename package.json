@@ -1,6 +1,6 @@
 {
   "name": "github_field",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component to search GitHub users",
   "main": "prod-build/index.js",
   "author": "Nicolas Agustin Torres <nicolastrres@gmail.com> (https://github.com/nicolastrres)",
