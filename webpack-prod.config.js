@@ -1,13 +1,10 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const PATHS = {
   build: path.resolve(__dirname, 'build'),
   source: path.resolve(__dirname, 'src'),
-  demo: path.resolve(__dirname, 'demo'),
-  entry: path.resolve(__dirname, 'demo', 'index.jsx'),
-  template: path.resolve(__dirname, 'demo', 'index.tmpl.html')
+  entry: path.resolve(__dirname, 'src', 'index.jsx'),
 }
 
 const config = {
@@ -21,10 +18,7 @@ const config = {
     loaders : [
       {
         test : /\.jsx?/,
-        include : [
-          PATHS.source,
-          PATHS.demo
-        ],
+        include : PATHS.source,
         loader : 'babel'
       },
       {
@@ -44,11 +38,6 @@ const config = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: PATHS.template
-    })
-  ]
 };
 
 module.exports = config;

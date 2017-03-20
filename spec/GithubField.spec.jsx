@@ -1,7 +1,7 @@
 import {shallow, mount} from 'enzyme';
 import expect from 'expect.js';
 import React from 'react';
-import GithubField from './GithubField';
+import GithubField from '../src/GithubField';
 import sinon from 'sinon';
 import request from 'superagent';
 
