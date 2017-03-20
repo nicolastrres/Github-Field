@@ -2,7 +2,7 @@
   "name": "github_field",
   "version": "1.0.2",
   "description": "React component to search GitHub users",
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "author": "Nicolas Agustin Torres <nicolastrres@gmail.com> (https://github.com/nicolastrres)",
   "license": "MIT",
   "scripts": {
