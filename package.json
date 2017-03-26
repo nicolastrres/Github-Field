@@ -1,8 +1,8 @@
 {
-  "name": "github_field",
-  "version": "1.0.2",
+  "name": "react-github-field",
+  "version": "1.0.3",
   "description": "React component to search GitHub users",
-  "main": "src/index.jsx",
+  "main": "lib/GithubField.js",
   "author": "Nicolas Agustin Torres <nicolastrres@gmail.com> (https://github.com/nicolastrres)",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,8 @@
   "keywords": [
     "react",
     "github",
-    "component"
+    "component",
+    "autosuggest"
   ],
   "repository": {
     "type": "git",
