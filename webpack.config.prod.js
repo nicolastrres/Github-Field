@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PATHS = {
   lib: path.resolve(__dirname, 'lib'),
   source: path.resolve(__dirname, 'src'),
-  entry: path.resolve(__dirname, 'src', 'index.jsx'),
+  entry: path.resolve(__dirname, 'src', 'GithubField.jsx'),
 }
 
 module.exports = {

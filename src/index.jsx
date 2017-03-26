@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GithubField from '../src/GithubField';
+import GithubField from '../lib/GithubField';
 import request from 'superagent';
 
 function findAccounts(userName, callback) {
