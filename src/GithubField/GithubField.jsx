@@ -1,15 +1,13 @@
 import Autosuggest from 'react-autosuggest';
 import React from 'react';
-import GithubClient from '../GithubClient';
 import theme from './theme.css';
 
 const getSuggestionValue = suggestion => suggestion.username;
 
 function renderSuggestion(suggestion, { query }) {
-  console.log(query);
   const imageStyle = {
     backgroundImage: `url(${suggestion.avatar_url})`,
-    backgroundSize: '56'
+    backgroundSize: '56px'
   }
 
   return (
@@ -18,7 +16,6 @@ function renderSuggestion(suggestion, { query }) {
     </span>
   );
 }
-
 
 class GithubField extends React.Component {
   constructor(props) {
@@ -31,6 +28,7 @@ class GithubField extends React.Component {
     this.updateAutocomplete = this.updateAutocomplete.bind(this);
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
     this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
+    this.shouldRenderSuggestions = this.shouldRenderSuggestions.bind(this);
   }
 
   handleUpdateInput(event, { newValue }) {
@@ -38,8 +36,11 @@ class GithubField extends React.Component {
   };
 
   onSuggestionsFetchRequested({ value }){
-    const githubClient = new GithubClient();
-    githubClient.findAccounts(value, this.updateAutocomplete);
+    this.props.findAccounts(value, this.updateAutocomplete);
+  };
+
+  shouldRenderSuggestions(value) {
+    return value.trim().length > 3;
   };
 
   updateAutocomplete(items) {
@@ -74,6 +75,7 @@ class GithubField extends React.Component {
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
+        shouldRenderSuggestions={this.shouldRenderSuggestions}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
       />
@@ -81,4 +83,8 @@ class GithubField extends React.Component {
   }
 }
 
-export default GithubField;
+GithubField.propTypes = {
+  findAccounts: React.PropTypes.func.isRequired
+};
+
+export default GithubField

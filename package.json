@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "build:dev": "webpack -d --watch",
-    "test": "mocha --require ./.setup.js --require ignore-styles --recursive './src/**/*.spec.js*'"
+    "test": "mocha --require ./.setup.js --require ignore-styles --recursive './spec/*.spec.js*'"
   },
   "keywords": [
     "react",

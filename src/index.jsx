@@ -1,12 +1,25 @@
 import React from 'react';
-import GithubField from './GithubField';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
+import GithubField from '../src/GithubField';
+import request from 'superagent';
 
-const App = () => {
-  return (<div>
-          <h1> Hello </h1>
-          <GithubField />
-        </div>);
+function findAccounts(userName, callback) {
+  request
+    .get(`https://api.github.com/search/users?q=${userName}`)
+    // .set('Authorization', `token ${process.env.GITHUB_TOKEN}`)
+    .accept('application/json')
+    .end((err, data) => {
+      if(err)
+        throw err;
+      callback(JSON.parse(data.text)['items']);
+    });
 }
 
-render(<App />, document.getElementById('main'));
+function App() {
+  return (<div>
+            <GithubField findAccounts={findAccounts}/>
+          </div>);
+}
+
+
+ReactDOM.render((<App />),document.getElementById('main'));
