@@ -6,11 +6,9 @@
   "author": "Nicolas Agustin Torres <nicolastrres@gmail.com> (https://github.com/nicolastrres)",
   "license": "MIT",
   "scripts": {
-    "build": "webpack -p --config webpack-prod.config.js",
-    "build:dev": "webpack -d --watch --config webpack-prod.config.js",
-    "build-demo": "webpack -p --config webpack.config.js",
-    "demo-server": "babel server/server.js -o server/server-compiled.js && node server/server-compiled.js",
-    "prepublish": "npm run build",
+    "build": "webpack -p",
+    "build-prod": "NODE_ENV=production webpack -p --progress --config webpack.config.prod.js",
+    "build:dev": "webpack -d --watch",
     "test": "mocha --require ./.setup.js --require ignore-styles --recursive './spec/*.spec.js*'"
   },
   "keywords": [

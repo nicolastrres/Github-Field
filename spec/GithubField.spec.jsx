@@ -22,8 +22,6 @@ describe('GithubField Component', () => {
   });
 
   it('should search for accounts when user write GitHub username', () => {
-    const wrapper = mount(<GithubField />);
-    const input = wrapper.find('input');
     const usersFromGithub = '{ \
       "items": [ \
       {"login": "nicolastrres1", "avatar_url": "some-url"} \
@@ -31,8 +29,11 @@ describe('GithubField Component', () => {
     const expectedUsers = [
       {'username':'nicolastrres1','avatar_url': 'some-url'}
     ]
-    req.end.yields(null, {'text': usersFromGithub});
-
+    const findAccountsStub = sinon.stub().yields(JSON.parse(usersFromGithub)['items']);
+    
+    const wrapper = mount(<GithubField findAccounts={findAccountsStub}/>);
+    const input = wrapper.find('input');
+    
     input.simulate('change', {target: {value: 'nicolastrres'}});
 
     expect(wrapper.state('value')).to.be('nicolastrres');
