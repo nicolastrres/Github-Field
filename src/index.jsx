@@ -6,7 +6,6 @@ import request from 'superagent';
 function findAccounts(userName, callback) {
   request
     .get(`https://api.github.com/search/users?q=${userName}`)
-    // .set('Authorization', `token ${process.env.GITHUB_TOKEN}`)
     .accept('application/json')
     .end((err, data) => {
       if(err)

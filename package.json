@@ -1,6 +1,6 @@
 {
   "name": "react-github-field",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React component to search GitHub users",
   "main": "lib/GithubField.js",
   "author": "Nicolas Agustin Torres <nicolastrres@gmail.com> (https://github.com/nicolastrres)",
