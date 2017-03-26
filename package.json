@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
+    "build-prod": "NODE_ENV=production webpack -p --progress --config webpack.config.prod.js",
     "build:dev": "webpack -d --watch",
     "test": "mocha --require ./.setup.js --require ignore-styles --recursive './spec/*.spec.js*'"
   },
