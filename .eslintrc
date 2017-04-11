@@ -1,0 +1,51 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "pragma": "React"
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "globals": {
+    "before": true,
+    "after": true,
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "rules": {
+    "semi": "error",
+    "quotes": ["error", "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+    "indent": ["error", 2],
+    "no-useless-constructor": "error",
+    "jsx-quotes": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    "react/prefer-es6-class": "error",
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-max-props-per-line": [1, { "when": "multiline" }],
+    "react/prefer-stateless-function": "error",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".spec.js", ".jsx"] }],
+    "react/jsx-pascal-case": "error",
+    "react/jsx-closing-bracket-location": "error",
+    "react/no-string-refs": "error",
+    "react/jsx-wrap-multilines": "error",
+    "react/self-closing-comp": "error",
+    "react/jsx-no-bind": "error",
+    "react/jsx-space-before-closing": [2, "always"],
+    "react/jsx-curly-spacing": "error",
+  }
+}

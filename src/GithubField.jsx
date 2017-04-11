@@ -4,15 +4,15 @@ import theme from './theme.css';
 
 const getSuggestionValue = suggestion => suggestion.username;
 
-function renderSuggestion(suggestion, { query }) {
+function renderSuggestion(suggestion) {
   const imageStyle = {
     backgroundImage: `url(${suggestion.avatar_url})`,
     backgroundSize: '56px'
-  }
+  };
 
   return (
-    <span className={ `${theme.suggestionContent}` } style={imageStyle}>
-      <span className={ theme.name }> { suggestion.username } </span>
+    <span className={`${theme.suggestionContent}`} style={imageStyle}>
+      <span className={theme.name}> { suggestion.username } </span>
     </span>
   );
 }
@@ -33,15 +33,15 @@ class GithubField extends React.Component {
 
   handleUpdateInput(event, { newValue }) {
     this.setState({ value: newValue});
-  };
+  }
 
   onSuggestionsFetchRequested({ value }){
     this.props.findAccounts(value, this.updateAutocomplete);
-  };
+  }
 
   shouldRenderSuggestions(value) {
     return value.trim().length > 3;
-  };
+  }
 
   updateAutocomplete(items) {
     items = items.map((item) => {
@@ -57,7 +57,7 @@ class GithubField extends React.Component {
     this.setState({
       suggestions: []
     });
-  };
+  }
 
   render () {
     const { value, suggestions } = this.state;

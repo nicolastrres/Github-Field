@@ -16,8 +16,8 @@ function findAccounts(userName, callback) {
 
 function App() {
   return (<div>
-            <GithubField findAccounts={findAccounts}/>
-          </div>);
+    <GithubField findAccounts={findAccounts} />
+  </div>);
 }
 
 
