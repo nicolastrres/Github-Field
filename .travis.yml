@@ -1,0 +1,9 @@
+language: javascript
+
+install:
+  - npm install
+script:
+  - npm run test
+deploy:
+  - npm run build
+  - npm run build-prod
