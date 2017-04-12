@@ -1,5 +1,7 @@
 # Github-Field
 
+[![Build Status](https://travis-ci.org/nicolastrres/Github-Field.svg?branch=master)](https://travis-ci.org/nicolastrres/Github-Field)
+
 React component to auto suggest GitHub usernames while typing.
 
 
