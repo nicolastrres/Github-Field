@@ -17,7 +17,7 @@ describe('GithubField Component', () => {
   });
 
   it('should render an Autosuggest field', () => {
-    const wrapper = shallow(<GithubField />);
+    const wrapper = shallow(<GithubField findAccounts={sinon.stub()}/>);
     expect(wrapper.find('Autosuggest')).to.have.length(1);
   });
 
