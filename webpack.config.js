@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const PATHS = {
-  build: path.resolve(__dirname, 'build'),
+  build: path.resolve(__dirname),
   source: path.resolve(__dirname, 'src'),
   demo: path.resolve(__dirname, 'demo'),
   entry: path.resolve(__dirname, 'demo', 'index.jsx'),
