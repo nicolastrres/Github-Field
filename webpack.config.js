@@ -3,19 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const PATHS = {
-  build: path.resolve(__dirname),
+  build: path.resolve(__dirname, 'demo'),
   source: path.resolve(__dirname, 'src'),
   demo: path.resolve(__dirname, 'demo'),
-  entry: path.resolve(__dirname, 'demo', 'index.jsx'),
-  template: path.resolve(__dirname, 'demo', 'index.tmpl.html')
+  entry: path.resolve(__dirname, 'demo', 'index.jsx')
 }
 
 const config = {
   entry: PATHS.entry,
   output: {
     path: PATHS.build,
-    filename: 'index.js',
-    library: 'GithubField'
+    filename: 'bundle.js',
   },
   module : {
     loaders : [
@@ -43,12 +41,7 @@ const config = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: PATHS.template
-    })
-  ]
+  }
 };
 
 module.exports = config;
