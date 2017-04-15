@@ -12,8 +12,9 @@ body { position: relative }
 h1 {
   left: 40%;
   margin-bottom: 10%;
+  font-family: 'Dancing Script', cursive;
 }
 
 #container {
-  padding-left: 13%;
+  padding-left: 4.5%;
 }

@@ -5,14 +5,20 @@ import theme from './theme.css';
 const getSuggestionValue = suggestion => suggestion.username;
 
 function renderSuggestion(suggestion) {
-  const imageStyle = {
-    backgroundImage: `url(${suggestion.avatar_url})`,
-    backgroundSize: '56px'
+  const style = {
+    image: {
+      width: '56px',
+      borderRadius: '56px'
+    },
+    username: {
+      marginLeft: '2%'
+    }
   };
 
   return (
-    <span className={`${theme.suggestionContent}`} style={imageStyle}>
-      <span className={theme.name}> { suggestion.username } </span>
+    <span className={`${theme.suggestionContent}`} >
+      <img src={`${suggestion.avatar_url}`} style={style.image} />
+      <span className={theme.name} style={style.username} > { suggestion.username } </span>
     </span>
   );
 }
