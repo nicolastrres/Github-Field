@@ -5,6 +5,9 @@
 React component to auto suggest GitHub usernames while typing.
 
 
+## Demo
+https://nicolastrres.github.io/Github-Field
+
 ## Usage
 ```
 npm install react-github-field
