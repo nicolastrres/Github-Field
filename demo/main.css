@@ -2,10 +2,18 @@ html, body { height: 100% }
 
 body { position: relative }
 
-#main {
+.main {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-right: -50%;
   transform: translate(-50%, -50%);
+}
+
+h1 {
+  left: 40%;
+  margin-bottom: 10%;
+}
+
+#container {
+  padding-left: 13%;
 }

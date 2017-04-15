@@ -21,4 +21,4 @@ function App() {
 }
 
 
-ReactDOM.render((<App />),document.getElementById('main'));
+ReactDOM.render((<App />),document.getElementById('container'));
