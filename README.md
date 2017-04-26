@@ -6,6 +6,7 @@ React component to auto suggest GitHub usernames while typing.
 
 
 ## Demo
+![GitHub Field demo](/nicolastrres_github_field.gif)
 https://nicolastrres.github.io/Github-Field
 
 ## Usage
